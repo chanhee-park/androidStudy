@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--
+        RelativeLayout 위치 조정 방법
+        layout_toLeftOf : 해당 컴포넌트를 위치를 어떤 다른 컴포넌트의 왼쪽으로 지정한다.
+        layout_toRightOf: 해당 컴포넌트를 위치를 어떤 다른 컴포넌트의 오른쪽으로 지정한다.
+        layout_above    : 해당 컴포넌트를 위치를 어떤 다른 컴포넌트의 위쪽으로 지정한다.
+        layout_below    : 해당 컴포넌트를 위치를 어떤 다른 컴포넌트의 아래쪽으로 지정한다.
+    -->
+
+    <!--
+       DP: 다양한 디바이스 크기에 대응하는데 필요하다.
+       픽셀 단위로 크기를 지정하며, 큰 화면과 작은 화면에 상관없이 같은 크기로 나타난다.
+    -->
+
+    <!--
+       align 과 위치조정을 함께 사용하면 크기가 자동으로 조정된다.
+       직접 적용한 width & height 를 넘어서서 자동으로 변경된 크기가 먹힌다.
+    -->
+
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/layout2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#ff0044"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/layout3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="#44ff00"></RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/layout4"
+        android:background="#ff33aa"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/layout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="#4400ff"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/layout1"
+        android:layout_above="@+id/layout3"
+        android:layout_toLeftOf="@+id/layout2"
+        android:layout_toRightOf="@+id/layout4"
+        android:background="#333333"></RelativeLayout>
+
+</RelativeLayout>
